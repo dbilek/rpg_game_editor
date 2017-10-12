@@ -9,8 +9,15 @@
   </head>
 
   <body>
-  	<div class="<%= notice %>"><%= notice %></div>
-  	<div class="<%= alert %>"><%= alert %></div>
-    <%= yield %>
+    <%= render 'shared/header' %>
+    <div class="container">
+      <div class="row">
+        <% flash.each do | flash_key, message | %>
+          <div class = "col-md-6 col-md-offset-3 text-center alert_main alert alert-<%= set_classname_if_flash_from_devise(flash_key) %>"><%= message %><span id="close_flash_message" class="glyphicon glyphicon-remove" style="cursor:pointer" onclick="parentNode.remove()"></span></div>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
