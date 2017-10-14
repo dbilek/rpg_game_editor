@@ -7,14 +7,27 @@ html {
 }
 
 body {
-  background-color: #EAE7DC;
+  background-color: #8b8b8b;
+  background-image: url(asfalt-light.png);
+  background-repeat: repeat;
   margin-bottom: 200px;
-  color: #504949;
+  color: #fbfbfb;
+  a {
+    color: #003366;
+    &:hover {
+    color: #30a2da;
+    text-decoration: none;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   margin-bottom: 30px;
+}
+
+.navbar-nav > li > a:hover {
+  background-color: transparent;
 }
 
 footer {
