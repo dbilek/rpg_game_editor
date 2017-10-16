@@ -26,15 +26,20 @@ gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  gem 'byebug', platform: :mri
-end
-
 group :development do
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'byebug', platform: :mri
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
+  gem 'factory_girl_rails', '~> 4.7'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
