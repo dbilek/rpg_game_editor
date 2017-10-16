@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Sign up user" do
 
   it "should redirect to home page, with welcome message" do
-    visit "users/sign_up"
+    visit signup_path
     fill_in "Username", :with => "example_name"
     fill_in "Email", :with => "example@gm.com"
     fill_in "Password", :with => "secret"
@@ -14,7 +14,7 @@ describe "Sign up user" do
   end
 
   it "should show error message if params invalid" do
-    visit "users/sign_up"
+    visit signup_path
     fill_in "Username", :with => ""
     fill_in "Email", :with => ""
     fill_in "Password", :with => ""
