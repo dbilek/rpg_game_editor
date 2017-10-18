@@ -19,7 +19,7 @@ describe "Sign up user" do
     fill_in "Email", :with => ""
     fill_in "Password", :with => ""
     click_button('Sign up')
-    expect(page).to have_content('The form contain 3 errors')
+    expect(page).to have_content('The form contain 4 errors')
   end
 
 end
