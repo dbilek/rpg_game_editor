@@ -3,8 +3,8 @@
     <h2>Your characters</h2>
       <ul>
         <% @characters.each do |character| %>
-          <li><%= image_tag character.avatar %></li>
-          <li><%= link_to character.name, character_path(character) %></li>
+          <li><%= image_tag character.avatar.thumb %>
+          <%= link_to character.name, character_path(character) %></li>
         <% end %>
       </ul>
   </div>

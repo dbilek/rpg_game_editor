@@ -22,7 +22,7 @@
         <%= f.file_field :avatar, autocomplete: "off"%>
       </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
-
+      <%= f.hidden_field :avatar_cache %>
       <div class="actions">
         <%= f.submit "Create character", class: "btn btn-warning" %>
       </div>

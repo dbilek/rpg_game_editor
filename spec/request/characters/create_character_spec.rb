@@ -8,7 +8,7 @@ describe "Create character" do
     sign_in(user)
     visit new_character_path
     fill_in "Name", :with => "example_name"
-    attach_file("Upload avatar", Rails.root + "spec/fixtures/avatar.jpg")
+    attach_file("Upload avatar", Rails.root + "spec/fixtures/avatar_default.jpg")
     click_button('Create character')
     expect(page).to have_current_path(characters_path)
     expect(page).to have_content('You created a new character.')
@@ -18,7 +18,7 @@ describe "Create character" do
     sign_in(user)
     visit new_character_path
     fill_in "Name", :with => ""
-    attach_file("Upload avatar", Rails.root + "spec/fixtures/avatar.jpg")
+    attach_file("Upload avatar", Rails.root + "spec/fixtures/avatar_default.jpg")
     click_button('Create character')
     expect(page).to have_content("Name can't be blank")
   end
