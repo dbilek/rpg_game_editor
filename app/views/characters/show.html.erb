@@ -1,0 +1,8 @@
+<div class="col-md-12">
+  <div class="col-md-4">
+    <h2><%= @character.name %></h2>
+    <p><%= image_tag @character.avatar %></p>
+    <p><%= link_to "Edit character", edit_character_path(@character.id) %></p>
+    <p><%= link_to "Destroy character", character_path(@character.id), method: :delete, data: { confirm: "Are you sure? "} %></p>
+  </div>
+</div>

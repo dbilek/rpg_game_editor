@@ -1,0 +1,30 @@
+<div class="col-md-12">
+  <div class="col-md-3 col-md-offset-5">
+    <h2>Edit character</h2>
+
+    <%= form_for(@character, html: { multipart: true }) do |f| %>
+      <% if @character.errors.any? %>
+        <div class="alert alert-danger">
+          <ul class="list-unstyled">
+            <% @character.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :avatar, "Upload avatar" %><br />
+        <%= f.file_field :avatar, autocomplete: "off"%>
+      </div>
+      <%= f.hidden_field :avatar_cache %>
+      <div class="actions">
+        <%= f.submit "Update character", class: "btn btn-warning" %>
+      </div>
+    <% end %>
+
+</div>

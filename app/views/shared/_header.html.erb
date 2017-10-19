@@ -4,6 +4,8 @@
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home", root_path %></li>
     <% if user_signed_in? %>
+      <li><%= link_to "CREATE CHARACTER", new_character_path %></li>
+      <li><%= link_to "CHARACTERS", characters_path %></li>
       <li class="dropdown">
          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My account</a>
         <ul class="dropdown-menu">
