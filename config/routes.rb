@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index', as: :root
 
   resources :characters
+  
+  resources :character_attributes, only: [:create, :destroy]
+  
 end

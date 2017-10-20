@@ -1,0 +1,13 @@
+<div class="attribute_<%= character_attribute.id %>">
+  <table>
+    <tr>
+      <td><%= image_tag character_attribute.icon %></td>
+      <td><%= character_attribute.name %></td>
+      <td><input type="range" min="1" max="100" value="<%= character_attribute.intensity %>" disabled="true"></td>
+      <td><%= link_to character_attribute_path(character_attribute), method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        <% end %> 
+      </td>
+    </tr>
+  </table>
+</div>

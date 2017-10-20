@@ -5,4 +5,10 @@
     <p><%= link_to "Edit character", edit_character_path(@character.id) %></p>
     <p><%= link_to "Destroy character", character_path(@character.id), method: :delete, data: { confirm: "Are you sure? "} %></p>
   </div>
+  <div class="col-md-4">
+  	<div class="show_attribute">
+      <%= render @character_attribute %>
+    </div>
+    <%= render 'character_attributes/new_attribute' %>
+  </div>
 </div>

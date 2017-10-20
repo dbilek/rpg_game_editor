@@ -1,0 +1,23 @@
+<%= form_for [@character.character_attribute.new], html: { multipart: true }, remote: true do |f| %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intensity %><br />
+    <%= f.range_field :intensity, autofocus: true, min: 1, max: 100 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :icon, "Upload icon" %><br />
+    <%= f.file_field :icon, autocomplete: "off"%>
+  </div>
+    <%= f.hidden_field :character_id, value: @character.id, autocomplete: "off"%>
+  
+  <div class="actions">
+    <%= f.submit "Add attribute", class: "btn btn-warning" %>
+  </div>
+
+<% end %>

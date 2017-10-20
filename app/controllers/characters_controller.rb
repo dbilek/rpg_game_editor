@@ -26,6 +26,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @character_attribute = @character.character_attribute
   end
 
   def edit
