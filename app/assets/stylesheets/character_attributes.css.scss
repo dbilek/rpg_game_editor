@@ -1,0 +1,22 @@
+#show_attribute {
+	table {
+		width: 100%;
+		td {
+			padding: 5px;
+			text-align: left;
+			margin-bottom: 5px;
+		}
+		.attribute_icon {
+			width: 10%;
+		}
+		.intensity {
+			width: 40%;
+		}
+		.attribute_name {
+			width: 25%;
+		}
+		.intensity_value {
+			width: 10%;
+		}
+	}
+}
