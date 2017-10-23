@@ -2,17 +2,17 @@
   
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    <%= f.text_field :name, autofocus: true, class: "form-control clear_field" %>
   </div>
 
   <div class="field">
     <%= f.label :intensity %><br />
-    <%= f.range_field :intensity, autofocus: true, min: 1, max: 100 %>
+    <%= f.range_field :intensity, autofocus: true, min: 1, max: 100, class: "clear_field" %>
   </div>
 
   <div class="field">
     <%= f.label :icon, "Upload icon" %><br />
-    <%= f.file_field :icon, autocomplete: "off"%>
+    <%= f.file_field :icon, autocomplete: "off", class: "clear_field" %>
   </div>
     <%= f.hidden_field :character_id, value: @character.id, autocomplete: "off"%>
   
