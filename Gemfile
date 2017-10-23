@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'remotipart', '~> 1.2', '>= 1.2.1'
+gem 'fog-aws', '~> 0.7.6'
 
 group :development do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'

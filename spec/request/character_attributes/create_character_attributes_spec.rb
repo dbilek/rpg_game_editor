@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Create character attributes", :js => true do
+describe "Create character attributes" do
 	let(:user) { FactoryGirl.create(:user) }
 	let(:character) { FactoryGirl.create(:character, user_id: user.id) }
 	let(:character_attribute) { FactoryGirl.create(:character_attribute, character_id: character.id) }
