@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   resources :characters
   
-  resources :character_attributes, only: [:create, :destroy]
+  resources :character_attributes, only: [:create, :update, :destroy]
   
 end

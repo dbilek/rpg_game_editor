@@ -26,7 +26,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character_attribute = @character.character_attribute
+    @character_attribute = @character.character_attribute.order("created_at")
   end
 
   def edit

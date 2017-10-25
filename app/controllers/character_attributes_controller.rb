@@ -10,6 +10,18 @@ class CharacterAttributesController < ApplicationController
     end 
   end
 
+  def update
+    @character_attribute = CharacterAttribute.find(params[:id])
+    
+    respond_to do |format|
+      # byebug
+      if @character_attribute.update_attributes!(param_attribute)
+        format.js
+        format.html { redirect_to character_path(@character_attribute.character_id) }
+      end
+    end
+  end
+
   def destroy
     @character_attribute = CharacterAttribute.find(params[:id])
     @character = @character_attribute.character_id

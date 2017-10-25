@@ -19,7 +19,7 @@
 
       <div class="field">
         <%= f.label :avatar, "Upload avatar" %><br />
-        <%= f.file_field :avatar, autocomplete: "off"%>
+        <%= f.file_field :avatar, autocomplete: "off" %>
       </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :avatar_cache %>
@@ -29,3 +29,4 @@
     <% end %>
 
 </div>
+ 

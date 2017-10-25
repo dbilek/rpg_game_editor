@@ -1,0 +1,2 @@
+$(".edit_form_<%= @character_attribute.id %>").remove()
+$(".attribute_<%= @character_attribute.id %>").prepend("<%= j render(@character_attribute) %>");

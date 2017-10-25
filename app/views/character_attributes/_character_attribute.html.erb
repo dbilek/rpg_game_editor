@@ -1,14 +1,56 @@
 <div class="attribute_<%= character_attribute.id %>">
-  <table>
-    <tr>
-      <td class="attribute_icon"><%= image_tag character_attribute.icon %></td>
-      <td class="attribute_name"><%= character_attribute.name %></td>
-      <td class="intensity"><input type="range" min="1" max="100" value="<%= character_attribute.intensity %>" disabled="true"></td>
-      <td class="intensity_value"><%= character_attribute.intensity %>%</td>
-      <td><%= link_to character_attribute_path(character_attribute), method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
-        <span class="glyphicon glyphicon-trash"></span>
-        <% end %> 
-      </td>
-    </tr>
-  </table>
+  <div class="edit_<%= character_attribute.id %>">
+    <table>
+      <tr>
+        <td class="attribute_icon">
+          <%= image_tag character_attribute.icon %>
+        </td>
+
+        <td class="attribute_name"><%= character_attribute.name %></td>
+
+        <td class="intensity"><input type="range" min="1" max="100" value="<%= character_attribute.intensity %>" disabled="true" ></td>
+
+        <td class="intensity_value"><%= character_attribute.intensity %>%</td>
+
+        <td><span style="cursor: pointer;" class="glyphicon glyphicon-wrench edit_attribute modifying_icon" data-id="<%= character_attribute.id %>"></span></td>
+      </tr>
+    </table>
+  </div>
+  <div class="edit_form edit_form_<%= character_attribute.id %>" data-id="<%= character_attribute.id %>">
+    <table> 
+      <tr>
+        <%= form_for character_attribute, html: { multipart: true }, remote: true, method: :patch, id: "edit_attribute_form" do |f|  %>
+
+          <td class="attribute_icon">
+            <label class="icon" for="file_selector_<%= character_attribute.id %>">
+              <%= image_tag character_attribute.icon, class: "img_prev_#{character_attribute.id }" %>
+              <input type="file" name="character_attribute[icon]" id="file_selector_<%= character_attribute.id %>" style="display:none;" data_file_id="<%= character_attribute.id %>" autocomplete="off" onchange="readURL(this);">
+              <span style="cursor: pointer;" class="glyphicon glyphicon-upload modifying_icon"></span>
+            </label>
+          </td>
+
+          <td class="attribute_name" style="color: black;"><%= f.text_field :name, class: "attribute_name_field" %></td>
+
+          <td class="intensity"><%= f.range_field :intensity, min: 1, max: 100, value: character_attribute.intensity, class: "intensity_change" %></td>
+
+          <td class="intensity_value intensity_value_<%= character_attribute.id %>"><%= character_attribute.intensity %>%</td>
+
+          <td>
+            <button type="submit" class="hide_submit">
+              <span class="modifying_icon"><i class="glyphicon glyphicon-save"></i></span>
+            </button>
+          </td>
+        <% end %>
+
+        <td><%= link_to character_attribute_path(character_attribute), method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
+          <span class="glyphicon glyphicon-trash modifying_icon"></span>
+          <% end %> 
+        </td>
+        <td>
+            <span style="cursor: pointer;" class="glyphicon glyphicon-remove close_edit_attribute modifying_icon" data-id="<%= character_attribute.id %>"></span>
+          </td>
+      </tr>
+    </table>
+    <%= javascript_include_tag 'read_url' %>
+  </div>
 </div>

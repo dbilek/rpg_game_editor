@@ -18,5 +18,19 @@
 		.intensity_value {
 			width: 10%;
 		}
+		.attribute_name_field {
+			width: 100%;
+		}
+		.hide_submit {
+			padding: 0;
+			border: none;
+			background: transparent;
+		}
+		.modifying_icon {
+			color: #fbfbfb;
+			&:hover {
+				color: #eea236;
+			}
+		}
 	}
 }
